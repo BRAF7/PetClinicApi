@@ -49,7 +49,7 @@ class ListCitasRepository implements CitasRepository {
   @override
   Future<List<CitaModel>> addCita(CitaModel model) async {
     List<CitaModel> listCita = [];
-    String url = 'http://localhost:9999/cita/add';
+    String url = '${URL}/cita/add';
 
     String? fecha = model.fecha;
     String? hora = model.hora;
@@ -72,7 +72,7 @@ class ListCitasRepository implements CitasRepository {
 
   @override
   Future<String> editCita(CitaModel model) async {
-    String url = 'http://localhost:9999/cita/update';
+    String url = '${URL}/cita/update';
 
     int? idCita = model.idCita;
     String? fecha = model.fecha;
