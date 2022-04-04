@@ -9,14 +9,14 @@ class MascotaModel {
   String? razon;
 
   MascotaModel(
-      {this.idMascota,
+      this.idMascota,
       this.nombre,
       this.tipo,
       this.idDuenio,
       this.idCita,
       this.idMedicamento,
       this.fechaIngreso,
-      this.razon});
+      this.razon);
 
   MascotaModel.fromJson(Map<String, dynamic> json) {
     idMascota = json['idMascota'];

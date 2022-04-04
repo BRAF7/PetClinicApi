@@ -19,6 +19,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Container buildCallContainer(String title, Color color) {
+    return Container(
+      width: 40,
+      height: 40,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Center(child: Text("${title}")),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var listMascotaController = MascotaController(ListMascotasRepository());
@@ -61,7 +73,7 @@ class _MyAppState extends State<MyApp> {
                           child: Row(
                             children: [
                               InkWell(
-                                onTap: () {},
+                                onTap: () {print(listMascotas);},
                                 child: buildCallContainer(
                                   "patch",
                                   Colors.orangeAccent,
@@ -104,18 +116,6 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: FloatingActionButton(onPressed: (){}, child: Icon(Icons.add),),
       ),
-    );
-  }
-
-  Container buildCallContainer(String title, Color color) {
-    return Container(
-      width: 40,
-      height: 40,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Center(child: Text("${title}")),
     );
   }
 }

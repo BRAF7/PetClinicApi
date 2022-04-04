@@ -50,4 +50,34 @@ class ListMascotasRepository implements MascotaRepository {
     // TODO: implement updateOwnerList
     throw UnimplementedError();
   }
+
+  @override
+  Future<List<MascotaModel>> addMascota(MascotaModel mascota) async {
+    String url = 'http://localhost:9998/mascota/add';
+    List<MascotaModel> listMascotas = [];
+
+    String? nombre = mascota.nombre;
+    String? petType = mascota.tipo;
+    String? idDuenio = mascota.idDuenio;
+    String? idCita = mascota.idCita;
+    String? idMedicamento = mascota.idMedicamento;
+    String? fechaIngreso = mascota.fechaIngreso;
+    String? razon = mascota.razon;
+    Map data = {
+      "nombre": nombre,
+      "tipo": petType,
+      "idDuenio": idDuenio.toString(),
+      "idCita": idCita.toString(),
+      "idMedicamento": idMedicamento.toString(),
+      "fechaIngreso": fechaIngreso,
+      "razon": razon,
+    };
+    String jsonObject = json.encode(data);
+    var response = await http.post(Uri.parse(url),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonObject);
+    return listMascotas;
+  }
 }

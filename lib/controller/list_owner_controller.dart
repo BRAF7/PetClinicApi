@@ -13,4 +13,8 @@ class ListOwnerController{
   Future<String> deleteListOwner(ListOwner owner) async {
     return _repository.deleteListOwnerList(owner);
   }
+
+  Future<List<ListOwner>> addListOwner(ListOwner owner) async {
+    return _repository.addOwnerList(owner);
+  }
 }

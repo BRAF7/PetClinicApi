@@ -5,8 +5,11 @@ class ListOwner {
   String? direccion;
   String? email;
 
-  ListOwner(Type listOwnerRepository, 
-      {this.idDuenio, this.nombre, this.telefono, this.direccion, this.email});
+  ListOwner(
+      this.idDuenio, this.nombre, this.telefono, this.direccion, this.email);
+
+  // ListOwner(Type listOwnerRepository, Set<Object> set,
+  //     {this.idDuenio, this.nombre, this.telefono, this.direccion, this.email});
 
   ListOwner.fromJson(Map<String, dynamic> json) {
     idDuenio = json['idDuenio'];

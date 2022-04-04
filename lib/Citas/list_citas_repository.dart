@@ -51,4 +51,28 @@ class ListCitasRepository implements CitasRepository {
     // TODO: implement updateCitaList
     throw UnimplementedError();
   }
+
+  @override
+  Future<List<CitaModel>> addCita(CitaModel model) async {
+    List<CitaModel> listCita = [];
+    String url = 'http://localhost:9999/cita/add';
+
+    String? fecha = model.fecha;
+    String? hora = model.hora; 
+    String? tipoServicio = model.tipoServicio;
+    Map data = {
+      'fecha': fecha,
+      'hora': hora,
+      'tipoServicio': tipoServicio,
+    };
+    String jsonObject = json.encode(data);
+    var response = await http.post(Uri.parse(url),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonObject);
+    print(response.body);
+
+    return listCita;
+  }
 }

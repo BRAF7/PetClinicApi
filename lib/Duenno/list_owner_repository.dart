@@ -14,11 +14,15 @@ class ListOwnerRepository implements Repository {
       'idDuenio': owner.idDuenio,
     };
     String jsonObject = json.encode(data);
-    var response = await http.post(Uri.parse(url),
-        headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
-        body: jsonObject).then((value){return result = "true";});
+    var response = await http
+        .post(Uri.parse(url),
+            headers: <String, String>{
+              'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: jsonObject)
+        .then((value) {
+      return result = "true";
+    });
 
     return result;
   }
@@ -43,9 +47,35 @@ class ListOwnerRepository implements Repository {
   }
 
   @override
-  Future<List<ListOwner>> updateOwnerList() {
+  Future<List<ListOwner>> addOwnerList(ListOwner owner) async {
+    String url = 'http://localhost:18080/duenio/add';
+    List<ListOwner> listOwners = [];
+
+    int? id = owner.idDuenio;
+    String? nombre = owner.nombre;
+    String? telefono = owner.telefono;
+    String? direccion = owner.direccion;
+    String? email = owner.email;
+    Map data = {
+      'idDuenio': id.toString(),
+      'nombre': nombre,
+      'telefono': telefono.toString(),
+      'direccion': direccion,
+      'email': email,
+    };
+    String jsonObject = json.encode(data);
+    var response = await http.post(Uri.parse(url),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonObject);
+    
+    return listOwners;
+  }
+
+  @override
+  Future<List<ListOwner>> updateOwnerList(ListOwner owner) {
     // TODO: implement updateOwnerList
     throw UnimplementedError();
   }
-
 }

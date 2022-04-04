@@ -15,4 +15,8 @@ class CitaController{
   Future<String> deleteListCita(CitaModel model) async {
     return _repository.deleteCitaList(model);
   }
+
+   Future<List<CitaModel>> addCita(CitaModel model) async {
+    return _repository.addCita(model);
+  }
 }

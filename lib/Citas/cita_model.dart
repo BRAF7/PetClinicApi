@@ -4,7 +4,7 @@ class CitaModel {
   String? hora;
   String? tipoServicio;
 
-  CitaModel({this.idCita, this.fecha, this.hora, this.tipoServicio});
+  CitaModel(this.idCita, this.fecha, this.hora, this.tipoServicio);
 
   CitaModel.fromJson(Map<String, dynamic> json) {
     idCita = json['idCita'];
