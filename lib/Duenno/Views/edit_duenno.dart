@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_api_rest/Duenno/Views/homeDuennos.dart';
+import 'package:prueba_api_rest/Duenno/Views/home_duennos.dart';
 
 import '../Model/owner_model.dart';
-import '../edit_duenno.dart';
+import '../Repository/edit_duenno.dart';
 
-class EditTemplate extends StatelessWidget {
+class EditOwner extends StatelessWidget {
   ListOwner? model;
-  EditTemplate(this.model);
+  EditOwner(this.model);
 
   @override
   Widget build(BuildContext context) {

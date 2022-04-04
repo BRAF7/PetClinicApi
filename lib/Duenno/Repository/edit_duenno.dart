@@ -1,7 +1,7 @@
-import '../../../controller/mascotas_controller.dart';
-import 'Repository/list_owner_repository.dart';
-import 'Model/owner_model.dart';
-import '../controller/owner_controller.dart';
+import '../../../../controller/mascotas_controller.dart';
+import 'list_owner_repository.dart';
+import '../Model/owner_model.dart';
+import '../../controller/owner_controller.dart';
 
 void editOwner(
   int? idDuenio,

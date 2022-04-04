@@ -1,7 +1,7 @@
 import 'package:prueba_api_rest/Duenno/Repository/list_owner_repository.dart';
 import 'package:prueba_api_rest/controller/owner_controller.dart';
 import 'package:uuid/uuid.dart';
-import 'Model/owner_model.dart';
+import '../Model/owner_model.dart';
 
 void addOwner(
   int? idDuenio,

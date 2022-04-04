@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_api_rest/Duenno/add_main.dart';
+import 'package:prueba_api_rest/Duenno/Repository/add_main.dart';
 
-import 'homeDuennos.dart';
+import 'home_duennos.dart';
 
-void main() => runApp(AddTemplate());
 
-class AddTemplate extends StatelessWidget {
-  const AddTemplate({Key? key}) : super(key: key);
+class AddOwner extends StatelessWidget {
+  const AddOwner({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

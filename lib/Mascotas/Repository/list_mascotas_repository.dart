@@ -41,7 +41,7 @@ class ListMascotasRepository implements MascotaRepository {
 
   @override
   Future<List<MascotaModel>> addMascota(MascotaModel mascota) async {
-    String url = 'http://localhost:9998/mascota/add';
+    String url = '${URL}/mascota/add';
     List<MascotaModel> listMascotas = [];
 
     String? nombre = mascota.nombre;
@@ -51,6 +51,7 @@ class ListMascotasRepository implements MascotaRepository {
     String? idMedicamento = mascota.idMedicamento;
     String? fechaIngreso = mascota.fechaIngreso;
     String? razon = mascota.razon;
+
     Map data = {
       "nombre": nombre,
       "tipo": petType,
@@ -66,12 +67,13 @@ class ListMascotasRepository implements MascotaRepository {
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonObject);
+    print(response.body);
     return listMascotas;
   }
 
   @override
   Future<String> editMascota(MascotaModel mascota) async {
-    String url = 'http://localhost:9998/mascota/update';
+    String url = '${URL}/mascota/update';
 
     int? idMascota = mascota.idMascota;
     String? nombre = mascota.nombre;
