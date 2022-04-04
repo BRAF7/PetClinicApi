@@ -1,8 +1,8 @@
 
-import 'package:prueba_api_rest/Mascotas/mascota_model.dart';
+import 'package:prueba_api_rest/Mascotas/Model/mascota_model.dart';
 
-import 'list_mascotas_repository.dart';
-import 'mascota_repository.dart';
+import 'Repository/list_mascotas_repository.dart';
+import 'Repository/mascota_repository.dart';
 import '../controller/mascotas_controller.dart';
 
 void main() async {

@@ -1,4 +1,4 @@
-import 'cita_model.dart';
+import '../Model/cita_model.dart';
 
 abstract class CitasRepository{
   Future<List<CitaModel>> getCitaList();

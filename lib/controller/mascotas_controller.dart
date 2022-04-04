@@ -1,7 +1,7 @@
 
 
-import 'package:prueba_api_rest/Mascotas/mascota_model.dart';
-import 'package:prueba_api_rest/Mascotas/mascota_repository.dart';
+import 'package:prueba_api_rest/Mascotas/Model/mascota_model.dart';
+import 'package:prueba_api_rest/Mascotas/Repository/mascota_repository.dart';
 
 class MascotaController{
   final MascotaRepository _repository;

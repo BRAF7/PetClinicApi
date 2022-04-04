@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_api_rest/Mascotas/mascota_model.dart';
-import 'cita_model.dart';
-import '../controller/list_citas_controller.dart';
-import 'list_citas_repository.dart';
+import 'package:prueba_api_rest/Mascotas/Model/mascota_model.dart';
+import 'Model/cita_model.dart';
+import '../controller/citas_controller.dart';
+import 'Repository/list_citas_repository.dart';
 
 
 

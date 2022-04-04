@@ -1,5 +1,5 @@
-import 'package:prueba_api_rest/Citas/cita_model.dart';
-import 'package:prueba_api_rest/Citas/citas_repository.dart';
+import 'package:prueba_api_rest/Citas/Model/cita_model.dart';
+import 'package:prueba_api_rest/Citas/Repository/citas_repository.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 

@@ -1,4 +1,4 @@
-import 'mascota_model.dart';
+import '../Model/mascota_model.dart';
 
 abstract class MascotaRepository{
   Future<List<MascotaModel>> getMascotaModelList();

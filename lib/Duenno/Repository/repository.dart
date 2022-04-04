@@ -1,4 +1,4 @@
-import 'owner_model.dart';
+import '../Model/owner_model.dart';
 
 abstract class Repository{
   Future<List<ListOwner>> getListOwnerList();

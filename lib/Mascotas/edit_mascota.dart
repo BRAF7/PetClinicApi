@@ -1,6 +1,6 @@
-import 'package:prueba_api_rest/Mascotas/mascota_model.dart';
+import 'package:prueba_api_rest/Mascotas/Model/mascota_model.dart';
 import '../../controller/mascotas_controller.dart';
-import 'list_mascotas_repository.dart';
+import 'Repository/list_mascotas_repository.dart';
 
 void main() async {
   int? idMascota = 5;

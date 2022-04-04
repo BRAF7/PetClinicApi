@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-import 'owner_model.dart';
+import '../Model/owner_model.dart';
 import 'repository.dart';
 
 class ListOwnerRepository implements Repository {
@@ -48,7 +48,7 @@ class ListOwnerRepository implements Repository {
 
   @override
   Future<List<ListOwner>> addOwnerList(ListOwner owner) async {
-    String url = 'http://localhost:18080/duenio/add';
+    String url = '${URL}/duenio/add';
     List<ListOwner> listOwners = [];
 
     int? id = owner.idDuenio;
@@ -75,7 +75,7 @@ class ListOwnerRepository implements Repository {
 
   @override
   Future<String> editOwnerList(ListOwner owner) async {
-   String url = 'http://localhost:18080/duenio/update';
+   String url = '${URL}/duenio/update';
 
     int? id = owner.idDuenio;
     String? nombre = owner.nombre;

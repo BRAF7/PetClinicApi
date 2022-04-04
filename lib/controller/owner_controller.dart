@@ -1,5 +1,5 @@
-import '../Duenno/repository.dart';
-import '../Duenno/owner_model.dart';
+import '../Duenno/Repository/repository.dart';
+import '../Duenno/Model/owner_model.dart';
 
 class ListOwnerController{
   final Repository _repository;

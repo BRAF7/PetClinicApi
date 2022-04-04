@@ -1,7 +1,7 @@
-import 'package:prueba_api_rest/Mascotas/mascota_model.dart';
+import 'package:prueba_api_rest/Mascotas/Model/mascota_model.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import './mascota_repository.dart';
+import 'mascota_repository.dart';
 
 class ListMascotasRepository implements MascotaRepository {
   static const String URL = "http://10.0.2.2:9998";

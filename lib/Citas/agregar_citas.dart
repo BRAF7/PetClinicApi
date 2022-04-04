@@ -1,6 +1,6 @@
-import 'package:prueba_api_rest/Citas/cita_model.dart';
-import 'list_citas_repository.dart';
-import '../controller/list_citas_controller.dart';
+import 'package:prueba_api_rest/Citas/Model/cita_model.dart';
+import 'Repository/list_citas_repository.dart';
+import '../controller/citas_controller.dart';
 
 
 

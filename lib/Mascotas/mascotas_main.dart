@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_api_rest/Mascotas/list_mascotas_repository.dart';
-import 'package:prueba_api_rest/Mascotas/mascota_model.dart';
+import 'package:prueba_api_rest/Mascotas/Repository/list_mascotas_repository.dart';
+import 'package:prueba_api_rest/Mascotas/Model/mascota_model.dart';
 import 'package:prueba_api_rest/controller/mascotas_controller.dart';
-import '../../controller/list_owner_controller.dart';
-import '../Duenno/list_owner_repository.dart';
-import '../Duenno/owner_model.dart';
+import '../controller/owner_controller.dart';
+import '../Duenno/Repository/list_owner_repository.dart';
+import '../Duenno/Model/owner_model.dart';
 
 
 
