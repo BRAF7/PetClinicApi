@@ -17,4 +17,7 @@ class MascotaController{
   Future<List<MascotaModel>> addMascota(MascotaModel mascota) async {
     return _repository.addMascota(mascota);
   }
+  Future<String> editMascota(MascotaModel mascota) async {
+    return _repository.editMascota(mascota);
+  }
 }

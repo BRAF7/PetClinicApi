@@ -17,4 +17,7 @@ class ListOwnerController{
   Future<List<ListOwner>> addListOwner(ListOwner owner) async {
     return _repository.addOwnerList(owner);
   }
+  Future<List<ListOwner>> editListOwner(ListOwner owner) async {
+    return _repository.addOwnerList(owner);
+  }
 }

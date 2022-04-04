@@ -1,9 +1,7 @@
-
-
 import 'package:prueba_api_rest/Citas/cita_model.dart';
 import 'package:prueba_api_rest/Citas/citas_repository.dart';
 
-class CitaController{
+class CitaController {
   final CitasRepository _repository;
 
   CitaController(this._repository);
@@ -16,7 +14,11 @@ class CitaController{
     return _repository.deleteCitaList(model);
   }
 
-   Future<List<CitaModel>> addCita(CitaModel model) async {
+  Future<List<CitaModel>> addCita(CitaModel model) async {
     return _repository.addCita(model);
+  }
+
+  Future<String> editCita(CitaModel model) async {
+    return _repository.editCita(model);
   }
 }
