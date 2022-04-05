@@ -33,113 +33,217 @@ class EditMascota extends StatelessWidget {
     TextEditingController _textControllerRazon =
         TextEditingController(text: model?.razon);
     return MaterialApp(
-      title: "Pruebas de Dueño",
+      title: "Editar Mascotas",
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Editar"),
+          actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ListMascotas(),
+            ),
+          );
+            },
+            icon: const Icon(Icons.arrow_back),
+          ),
+        ],
         ),
         body: ListView(
           children: [
             Container(
               padding: EdgeInsets.all(17),
-              child: TextField(
-                  controller: _textControllerId,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      fillColor: Colors.grey[300],
-                      filled: true,
-                      hintText: model?.idDuenio.toString())),
-            ),
-            Container(
-              padding: EdgeInsets.all(17),
-              child: TextField(
-                  controller: _textControllerNombre,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      fillColor: Colors.grey[300],
-                      filled: true,
-                      hintText: model?.nombre)),
-            ),
-            Container(
-              padding: EdgeInsets.all(17),
-              child: TextField(
-                  controller: _textControllerTipo,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      fillColor: Colors.grey[300],
-                      filled: true,
-                      hintText: model?.tipo)),
-            ),
-            Container(
-              padding: EdgeInsets.all(17),
-              child: TextField(
-                  controller: _textControllerIdDuenio,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      fillColor: Colors.grey[300],
-                      filled: true,
-                      hintText: model?.idDuenio)),
-            ),
-            Container(
-              padding: EdgeInsets.all(17),
-              child: TextField(
-                  controller: _textControllerIdCita,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      fillColor: Colors.grey[300],
-                      filled: true,
-                      hintText: model?.idCita)),
-            ),
-            Container(
-              padding: EdgeInsets.all(17),
-              child: TextField(
-                  controller: _textControllerIdMedicamento,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      fillColor: Colors.grey[300],
-                      filled: true,
-                      hintText: model?.idMedicamento)),
-            ),
-            Container(
-              padding: EdgeInsets.all(17),
-              child: TextField(
-                  controller: _textControllerFechaIngreso,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      fillColor: Colors.grey[300],
-                      filled: true,
-                      hintText: model?.fechaIngreso)),
-            ),
-            Container(
-              padding: EdgeInsets.all(17),
-              child: TextField(
-                  controller: _textControllerRazon,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      fillColor: Colors.grey[300],
-                      filled: true,
-                      hintText: model?.razon)),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                EditMascotaStep(
-                    int.parse(_textControllerId.text),
-                    _textControllerNombre.text,
-                    _textControllerTipo.text,
-                    _textControllerIdDuenio.text,
-                    _textControllerIdCita.text,
-                    _textControllerIdMedicamento.text,
-                    _textControllerFechaIngreso.text,
-                    _textControllerRazon.text);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ListMascotas(),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right:270),
+                    child: const Text("ID MASCOTAS", style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ))
                   ),
-                );
-              },
-              child: const Text("Agregar"),
+                  TextField(
+                      controller: _textControllerId,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          fillColor: Colors.grey[300],
+                          filled: true,
+                          hintText: model?.idDuenio.toString())),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(17),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right:300),
+                    child: const Text("NOMBRE", style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ))
+                  ),
+                  TextField(
+                      controller: _textControllerNombre,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          fillColor: Colors.grey[300],
+                          filled: true,
+                          hintText: model?.nombre)),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(17),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right:240),
+                    child: const Text("TIPO DE MASCOTA", style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ))
+                  ),
+                  TextField(
+                      controller: _textControllerTipo,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          fillColor: Colors.grey[300],
+                          filled: true,
+                          hintText: model?.tipo)),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(17),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right:270),
+                    child: const Text("ID DEL DUEÑO", style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ))
+                  ),
+                  TextField(
+                      controller: _textControllerIdDuenio,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          fillColor: Colors.grey[300],
+                          filled: true,
+                          hintText: model?.idDuenio)),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(17),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right:295),
+                    child: const Text("ID DE CITA", style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ))
+                  ),
+                  TextField(
+                      controller: _textControllerIdCita,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          fillColor: Colors.grey[300],
+                          filled: true,
+                          hintText: model?.idCita)),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(17),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right:215),
+                    child: const Text("ID DE MEDICAMENTOS", style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ))
+                  ),
+                  TextField(
+                      controller: _textControllerIdMedicamento,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          fillColor: Colors.grey[300],
+                          filled: true,
+                          hintText: model?.idMedicamento)),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(17),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right:320),
+                    child: const Text("FECHA", style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ))
+                  ),
+                  TextField(
+                      controller: _textControllerFechaIngreso,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          fillColor: Colors.grey[300],
+                          filled: true,
+                          hintText: model?.fechaIngreso)),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(17),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right:315),
+                    child: const Text("RAZÓN", style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ))
+                  ),
+                  TextField(
+                      controller: _textControllerRazon,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          fillColor: Colors.grey[300],
+                          filled: true,
+                          hintText: model?.razon)),
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 10, left: 50, right:50,),
+              child: ElevatedButton(
+                onPressed: () {
+                  EditMascotaStep(
+                      int.parse(_textControllerId.text),
+                      _textControllerNombre.text,
+                      _textControllerTipo.text,
+                      _textControllerIdDuenio.text,
+                      _textControllerIdCita.text,
+                      _textControllerIdMedicamento.text,
+                      _textControllerFechaIngreso.text,
+                      _textControllerRazon.text);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ListMascotas(),
+                    ),
+                  );
+                },
+                child: const Text("Editar",style: TextStyle(fontSize:18)),
+              ),
             )
           ],
         ),

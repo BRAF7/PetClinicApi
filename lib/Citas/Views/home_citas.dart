@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
-import 'add_duenno_view.dart';
-import '../../controller/owner_controller.dart';
-import '../Repository/list_owner_repository.dart';
-import '../Model/owner_model.dart';
-import 'edit_duenno.dart';
 
-class ListOwnersView extends StatefulWidget {
-  ListOwnersView({Key? key}) : super(key: key);
+import '../Model/cita_model.dart';
+import '../Repository/list_citas_repository.dart';
+import 'add_cita_view.dart';
+import '../../controller/citas_controller.dart';
+import 'edit_cita_view.dart';
+
+class ListCitas extends StatefulWidget {
+  ListCitas({Key? key}) : super(key: key);
 
   @override
-  State<ListOwnersView> createState() => _ListOwnersViewState();
+  State<ListCitas> createState() => _ListCitasState();
 }
 
-class _ListOwnersViewState extends State<ListOwnersView> {
+class _ListCitasState extends State<ListCitas> {
   @override
   Widget build(BuildContext context) {
-    var listOwnerController = ListOwnerController(ListOwnerRepository());
+    var listOwnerController = CitaController(ListCitasRepository());
 
-    listOwnerController.fetchListOwner();
+    listOwnerController.fetchListCita();
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Dueño"),
+        title: const Text("Citas"),
         leading: IconButton(
           icon: const Icon(Icons.home),
           onPressed: () {
@@ -33,12 +34,12 @@ class _ListOwnersViewState extends State<ListOwnersView> {
             onPressed: () {
               setState(() {});
             },
-            icon: Icon(Icons.refresh),
+            icon: const Icon(Icons.refresh),
           ),
         ],
       ),
-      body: FutureBuilder<List<ListOwner>>(
-        future: listOwnerController.fetchListOwner(),
+      body: FutureBuilder<List<CitaModel>>(
+        future: listOwnerController.fetchListCita(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
@@ -70,11 +71,10 @@ class _ListOwnersViewState extends State<ListOwnersView> {
                     margin: const EdgeInsets.only(top: 20),
                     child: Column(
                       children: [
-                        Expanded(flex: 1, child: Text("ID: ${listOwners?.idDuenio}",style:TextStyle(fontSize: 18))),
-                        Expanded(flex: 1, child: Text("NOMBRE: ${listOwners?.nombre}",style:TextStyle(fontSize: 18))),
-                        Expanded(flex: 1, child: Text("TELEFONO: ${listOwners?.telefono}",style:TextStyle(fontSize: 18))),
-                        Expanded(flex: 1, child: Text("DIRECCIÓN: ${listOwners?.direccion}",style:TextStyle(fontSize: 18))),
-                        Expanded(flex: 1, child: Text("EMAIL: ${listOwners?.email}",style:TextStyle(fontSize: 18))),
+                        Expanded(flex: 1, child: Text("ID CITA: ${listOwners?.idCita}",style:TextStyle(fontSize: 18))),
+                        Expanded(flex: 1, child: Text("FECHA: ${listOwners?.fecha}",style:TextStyle(fontSize: 18))),
+                        Expanded(flex: 1, child: Text("HORA: ${listOwners?.hora}",style:TextStyle(fontSize: 18))),
+                        Expanded(flex: 1, child: Text("SERVICIO: ${listOwners?.tipoServicio}",style:TextStyle(fontSize: 18))),
                         Expanded(
                           flex: 2,
                           child: Row(
@@ -88,7 +88,7 @@ class _ListOwnersViewState extends State<ListOwnersView> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            EditOwner(listOwners),
+                                            EditCitasView(listOwners),
                                       ),
                                     );
                                   },
@@ -105,7 +105,7 @@ class _ListOwnersViewState extends State<ListOwnersView> {
                                   onTap: () {
                                     setState(() {
                                       listOwnerController
-                                          .deleteListOwner(listOwners!)
+                                          .deleteListCita(listOwners!)
                                           .then((value) {
                                         ScaffoldMessenger.of(context).showSnackBar(
                                           SnackBar(
@@ -118,7 +118,7 @@ class _ListOwnersViewState extends State<ListOwnersView> {
                                     });
                                   },
                                   child: buildCallContainer(
-                                    "delete",
+                                    "Delete",
                                     Colors.redAccent,
                                   ),
                                 ),
@@ -142,7 +142,7 @@ class _ListOwnersViewState extends State<ListOwnersView> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => AddOwner(),
+              builder: (context) => AddCitasView(),
             ),
           );
         },
@@ -159,7 +159,7 @@ class _ListOwnersViewState extends State<ListOwnersView> {
         color: color,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Center(child: Text("${title}")),
+      child: Center(child: Text("${title}", style:TextStyle(fontSize: 16))),
     );
   }
 }
