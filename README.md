@@ -1,4 +1,4 @@
-# vetapp
+# PetClinic
 ## Integrantes del equipo
 - 193230 Camas Najera Ramses Alejandro
 - 193216 Flores Aguilar Brian Tadeo
