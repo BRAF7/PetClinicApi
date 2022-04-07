@@ -6,4 +6,4 @@
 - 193290 Alvarez Rios Victor Daniel
 
 Tablero de Jira:
-https://193290.atlassian.net/jira/software/projects/CPM/boards/1
+https://193290.atlassian.net/jira/software/projects/CPM/boards/1 
